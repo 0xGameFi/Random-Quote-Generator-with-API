@@ -1,0 +1,13 @@
+# quote_generator.py
+
+import requests
+
+def get_random_quote():
+    url = "https://api.quotable.io/random"
+    response = requests.get(url).json()
+    quote = response["content"]
+    author = response["author"]
+    print(f'"{quote}" - {author}')
+
+# Sample usage
+get_random_quote()
